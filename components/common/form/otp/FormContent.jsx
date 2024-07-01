@@ -32,7 +32,14 @@ const FormContent = () => {
       console.log(result)
       if (result.status === 200) {
         localStorage.setItem('data',JSON.stringify(result.data))
-        router.push('/')
+        if(result.data.role === 'ROLE_ENTREPRISE'){
+          router.push('/employers-dashboard/dashboard')
+        }else if(result.data.role === 'ROLE_CANDIDAT'){
+          router.push('/job-list-v4')
+        }else{
+          router.push('/employers-dashboard/dashboard')
+        }
+
 
       } else {
         console.log('Error:', result.message);

@@ -1,131 +1,25 @@
-<<<<<<< HEAD
 import Link from "next/link";
-=======
-import {useState} from "react";
->>>>>>> d183ab064f6792e13a64cacb5aee7019e991e718
 
 const FormContent2 = () => {
-
-    const [lastname, setLastname] = useState('');
-    const [firstname, setFirstname] = useState('');
-    const [email, setEmail] = useState('');
-    const [dateNaissance, setDate] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        if (password !== confirmPassword) {
-            setError('Le mot de passe et la confirmation du mot de passe ne correspondent pas.');
-            return;
-        }
-
-
-<<<<<<< HEAD
-      <div className="form-group">
-        <button className="theme-btn btn-style-five" type="submit">
-          <Link href="/otp" className="call-modal otp">
-            S'inscrire
-          </Link>
-        </button>
-      </div>
-      {/* login */}
-    </form>
-  );
-=======
-        const data = {
-            lastname,
-            firstname,
-            email,
-            dateNaissance,
-            password
-        };
-
-
-        try {
-            const response = await fetch('http://167.86.125.178:8083/afrik-connect/api/v1/users/saveCandidat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            const result = await response.json();
-
-            // Handle the response data
-            if (result.status === 200) {
-                // Handle successful registration
-                console.log('Registration successful:', result);
-                // Redirect or perform any other action
-            } else {
-                console.log('Error:', result.message);
-                // Optionally, show an error message to the user
-                alert(result.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            // Optionally, show an error message to the user
-            alert('An error occurred. Please try again.');
-        }
-    };
-
     return (
-        <form method="post" onSubmit={handleSubmit}>
+        <form method="post" action="add-parcel.html">
             <div className="form-group">
                 <label>Nom</label>
-                <input
-                    type="text"
-                    name="lastname"
-                    placeholder="Nom de famille"
-                    required
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
-                />
+                <input type="text" name="lastname" placeholder="Nom de famille" required />
             </div>
             {/* lastname */}
 
             <div className="form-group">
                 <label>Prénom</label>
-                <input
-                    type="text"
-                    name="firstname"
-                    placeholder="Prénom"
-                    required
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
-                />
+                <input type="text" name="firstname" placeholder="Prénom" required />
             </div>
             {/* firstname */}
 
             <div className="form-group">
                 <label>Adresse Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <input type="email" name="email" placeholder="Email" required />
             </div>
             {/* email */}
-
-            <div className="form-group">
-                <label>Date de Naissance  </label>
-                <input
-                    id="date-field"
-                    type="date"
-                    name="dateNaissance"
-                    placeholder="Date"
-                    required
-                    value={dateNaissance}
-                    onChange={(e) => setDate(e.target.value)}
-                />
-            </div>
-            {/* date */}
 
             <div className="form-group">
                 <label>Mot de passe</label>
@@ -134,9 +28,6 @@ const FormContent2 = () => {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
             {/* password */}
@@ -148,25 +39,20 @@ const FormContent2 = () => {
                     type="password"
                     name="confirmpassword"
                     placeholder="Confirmer le mot de passe"
-                    required
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
                 />
             </div>
             {/* confirm password */}
 
-            {error && <div className="error">{error}</div>}
-            {/* error message */}
-
             <div className="form-group">
-                <button className="theme-btn btn-style-one" type="submit">
-                    S'inscrire
+                <button className="theme-btn btn-style-five" type="submit">
+                    <Link href="/otp" className="call-modal otp">
+                        S'inscrire
+                    </Link>
                 </button>
             </div>
-            {/* register */}
+            {/* login */}
         </form>
     );
->>>>>>> d183ab064f6792e13a64cacb5aee7019e991e718
 };
 
 export default FormContent2;
