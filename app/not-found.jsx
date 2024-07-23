@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Page Not Found || Africa-Connect",
-  description: "Africa-Connect",
+  title: "Page Not Found || Workin Africa",
+  description: "Workin Africa",
 };
 
 const index = () => {
@@ -23,7 +23,7 @@ const index = () => {
               <Image
                 width={154}
                 height={50}
-                src="/images/logo-2.svg"
+                src="/images/blue.png"
                 alt="brand"
               />
             </Link>

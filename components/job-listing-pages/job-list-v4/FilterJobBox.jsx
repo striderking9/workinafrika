@@ -2,28 +2,22 @@
 
 'use client'
 
-import Pagination from "../components/Pagination";
 import Link from "next/link";
 import jobs from "../../../data/job-featured";
+import ListingShowing from "../components/ListingShowing";
+import JobSelect from "../components/JobSelect";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCategory,
   addDatePosted,
-  addDestination,
+  addExperienceSelect,
+  addJobTypeSelect,
   addKeyword,
   addLocation,
   addPerPage,
   addSalary,
   addSort,
-  addTag,
-  clearExperience,
-  clearJobType,
 } from "../../../features/filter/filterSlice";
-import {
-  clearDatePostToggle,
-  clearExperienceToggle,
-  clearJobTypeToggle,
-} from "../../../features/job/jobSlice";
 import Image from "next/image";
 
 const FilterJobBox = () => {
@@ -33,11 +27,10 @@ const FilterJobBox = () => {
     location,
     destination,
     category,
-    jobType,
     datePosted,
-    experience,
+    jobTypeSelect,
+    experienceSelect,
     salary,
-    tag,
   } = jobList || {};
 
   const { sort, perPage } = jobSort;
@@ -71,10 +64,9 @@ const FilterJobBox = () => {
 
   // job-type filter
   const jobTypeFilter = (item) =>
-    jobType?.length !== 0 && item?.jobType !== undefined
-      ? jobType?.includes(
-          item?.jobType[0]?.type.toLocaleLowerCase().split(" ").join("-")
-        )
+    item.jobType !== undefined && jobTypeSelect !== ""
+      ? item?.jobType[0]?.type.toLocaleLowerCase().split(" ").join("-") ===
+          jobTypeSelect && item
       : item;
 
   // date-posted filter
@@ -89,19 +81,15 @@ const FilterJobBox = () => {
 
   // experience level filter
   const experienceFilter = (item) =>
-    experience?.length !== 0
-      ? experience?.includes(
-          item?.experience?.split(" ").join("-").toLocaleLowerCase()
-        )
+    experienceSelect !== ""
+      ? item?.experience?.split(" ").join("-").toLocaleLowerCase() ===
+          experienceSelect && item
       : item;
 
   // salary filter
   const salaryFilter = (item) =>
     item?.totalSalary?.min >= salary?.min &&
     item?.totalSalary?.max <= salary?.max;
-
-  // tag filter
-  const tagFilter = (item) => (tag !== "" ? item?.tag === tag : item);
 
   // sort filter
   const sortFilter = (a, b) =>
@@ -116,7 +104,6 @@ const FilterJobBox = () => {
     ?.filter(datePostedFilter)
     ?.filter(experienceFilter)
     ?.filter(salaryFilter)
-    ?.filter(tagFilter)
     ?.sort(sortFilter)
     .slice(perPage.start, perPage.end !== 0 ? perPage.end : 16)
     ?.map((item) => (
@@ -185,52 +172,33 @@ const FilterJobBox = () => {
   const clearAll = () => {
     dispatch(addKeyword(""));
     dispatch(addLocation(""));
-    dispatch(addDestination({ min: 0, max: 100 }));
     dispatch(addCategory(""));
-    dispatch(clearJobType());
-    dispatch(clearJobTypeToggle());
+    dispatch(addJobTypeSelect(""));
     dispatch(addDatePosted(""));
-    dispatch(clearDatePostToggle());
-    dispatch(clearExperience());
-    dispatch(clearExperienceToggle());
+    dispatch(addExperienceSelect(""));
     dispatch(addSalary({ min: 0, max: 20000 }));
-    dispatch(addTag(""));
     dispatch(addSort(""));
     dispatch(addPerPage({ start: 0, end: 0 }));
   };
-
   return (
-    <div className="ls-outer">
+    <>
       <div className="ls-switcher">
-        <div className="showing-result show-filters">
-          <button
-            type="button"
-            className="theme-btn toggle-filters d-block mr-30"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#filter-sidebar"
-          >
-            <span className="icon icon-filter"></span> Filter
-          </button>
-          {/* Collapsible sidebar button */}
-
+        <div className="showing-result">
           <div className="text">
             <strong>{content?.length}</strong> jobs
           </div>
         </div>
-        {/* End showing results */}
+        {/* End .showing-result */}
 
         <div className="sort-by">
           {keyword !== "" ||
           location !== "" ||
-          destination?.min !== 0 ||
-          destination?.max !== 100 ||
           category !== "" ||
-          jobType?.length !== 0 ||
+          jobTypeSelect !== "" ||
           datePosted !== "" ||
-          experience?.length !== 0 ||
+          experienceSelect !== "" ||
           salary?.min !== 0 ||
           salary?.max !== 20000 ||
-          tag !== "" ||
           sort !== "" ||
           perPage.start !== 0 ||
           perPage.end !== 0 ? (
@@ -239,7 +207,7 @@ const FilterJobBox = () => {
               className="btn btn-danger text-nowrap me-2"
               style={{ minHeight: "45px", marginBottom: "15px" }}
             >
-              Clear All
+              Supprimer Tout
             </button>
           ) : undefined}
 
@@ -248,61 +216,24 @@ const FilterJobBox = () => {
             className="chosen-single form-select"
             onChange={sortHandler}
           >
-            <option value="">Sort by (default)</option>
-            <option value="asc">Newest</option>
-            <option value="des">Oldest</option>
+            <option value="">Trier (defaut)</option>
+            <option value="asc">Nouveau</option>
+            <option value="des">Ancien</option>
           </select>
           {/* End select */}
 
-          <select
-            onChange={perPageHandler}
-            className="chosen-single form-select ms-3 "
-            value={JSON.stringify(perPage)}
-          >
-            <option
-              value={JSON.stringify({
-                start: 0,
-                end: 0,
-              })}
-            >
-              All
-            </option>
-            <option
-              value={JSON.stringify({
-                start: 0,
-                end: 20,
-              })}
-            >
-              20 per page
-            </option>
-            <option
-              value={JSON.stringify({
-                start: 0,
-                end: 25,
-              })}
-            >
-              25 per page
-            </option>
-            <option
-              value={JSON.stringify({
-                start: 0,
-                end: 30,
-              })}
-            >
-              30 per page
-            </option>
-          </select>
           {/* End select */}
         </div>
+        {/* End sort by filter */}
       </div>
       {/* <!-- ls Switcher --> */}
 
       <div className="row">{content}</div>
       {/* End .row with jobs */}
 
-      <Pagination />
+      <ListingShowing />
       {/* <!-- End Pagination --> */}
-    </div>
+    </>
   );
 };
 

@@ -23,25 +23,23 @@ const About4 = () => {
       <div className="content-column col-lg-6 col-md-12 col-sm-12 order-2">
         <div className="inner-column" data-aos="fade-left">
           <div className="sec-title">
-            <h2>Millions of Jobs. Find the one that suits you.</h2>
+            <h2>Nos experts RH sont à votre disposition.</h2>
             <div className="text">
-              Search all the open positions on the web. Get your own
-              personalized salary estimate. Read reviews on over 600,000
-              companies worldwide.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
           <ul className="list-style-two">
-            <li>Creative Study Pattern</li>
-            <li>Quick Crash Courses</li>
-            <li>Certification Awarded</li>
-            <li>Provided with Experimental Examples</li>
+            <li>Conseil RH</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
           </ul>
           <div
             role="button"
             onClick={() => setOpen(true)}
             className="theme-btn btn-style-one lightbox-image"
           >
-            <span className="btn-title">Watch Video</span>
+            <span className="btn-title">Quick video to watch...</span>
           </div>
         </div>
       </div>

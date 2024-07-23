@@ -4,22 +4,14 @@ const FooterApps2 = () => {
   return (
     <div className="widget-content">
       <div className="download-btns">
-        <div className="text">Click and Get started in seconds</div>
-        <a href="#">
-          <Image
-            width={210}
-            height={60}
-            src="/images/icons/apple-2.png"
-            alt="icons"
-          />
-        </a>
-        <a href="#">
-          <Image
-            width={210}
-            height={60}
-            src="/images/icons/google-2.png"
-            alt="icons"
-          />
+        <div className="text"> "Vous avez une question?"</div>
+        <a href="#" className="app-btn" style={{backgroundColor: "#F9AB00"}}>
+          <div className="app-icon">
+            <i className="fa fa-phone"></i>
+          </div>
+          <div className="inner">
+            <div className="name-app">Contactez-nous</div>
+          </div>
         </a>
       </div>
     </div>

@@ -2,10 +2,8 @@ import FooterDefault from "../../footer/common-footer";
 import LoginPopup from "../../common/form/login/LoginPopup";
 import DefaulHeader from "../../header/DefaulHeader";
 import MobileMenu from "../../header/MobileMenu";
-import Breadcrumb from "../../common/Breadcrumb";
-import FilterSidebar from "./FilterSidebar";
 import FilterJobBox from "./FilterJobBox";
-import CallToAction from "../../call-to-action/CallToAction";
+import JobSearchForm from "./JobSearchForm";
 
 const index = () => {
   return (
@@ -22,33 +20,25 @@ const index = () => {
       <MobileMenu />
       {/* End MobileMenu */}
 
-      <Breadcrumb title="Find Jobs" meta="Jobs" />
-      {/* <!--End Breadcrumb Start--> */}
-
-      <section className="ls-section">
+      <section className="page-title style-three">
         <div className="auto-container">
-          <div className="row mb-5">
-            <div
-              className="offcanvas offcanvas-start"
-              tabIndex="-1"
-              id="filter-sidebar"
-              aria-labelledby="offcanvasLabel"
-            >
-              <div className="filters-column hide-left">
-                <FilterSidebar />
-              </div>
-            </div>
-            {/* <!-- End Filters Column --> */}
+          <JobSearchForm />
+          {/* <!-- Job Search Form --> */}
+        </div>
+      </section>
+      {/* <!--End Page Title--> */}
 
+      <section className="ls-section style-three">
+        <div className="auto-container">
+          <div className="row">
             <div className="content-column col-lg-12">
-              <FilterJobBox />
+              <div className="ls-outer">
+                <FilterJobBox />
+              </div>
             </div>
             {/* <!-- End Content Column --> */}
           </div>
           {/* End row */}
-
-          <CallToAction />
-          {/* End calltoAction */}
         </div>
         {/* End container */}
       </section>

@@ -31,9 +31,8 @@ const index = () => {
       <section className="registeration-banners">
         <div className="auto-container">
           <div className="sec-title text-center">
-            <h2>Emplois les plus populaires</h2>
+            <h2>Rejoignez-nous selon votre profil</h2>
             <div className="text">
-              Connaissez votre valeur et trouvez l'emploi qui correspond à votre vie
             </div>
           </div>
           {/* End sec-title */}
@@ -47,10 +46,8 @@ const index = () => {
       <section className="job-section alternate">
         <div className="auto-container">
           <div className="sec-title text-center">
-            <h2>Emplois les plus populaires</h2>
-            <div className="text">
-              Connaissez votre valeur et trouvez l'emploi qui correspond à votre vie
-            </div>
+            <h2>Nos offres du moment</h2>
+            
           </div>
           {/* End sec-title */}
 
@@ -95,25 +92,6 @@ const index = () => {
       </section>
       {/* <!-- End Top Companies --> */}
 
-      <section className="job-categories">
-        <div className="auto-container">
-          <div className="sec-title text-center">
-            <h2>Catégories d'emplois populaires</h2>
-            <div className="text">2020 emplois en direct - 293 ajoutés aujourd'hui.</div>
-          </div>
-
-          <div
-            className="row "
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
-          >
-            {/* <!-- Category Block --> */}
-            <JobCategorie1 />
-          </div>
-        </div>
-      </section>
-      {/* End Job Categorie Section */}
-
       <section className="about-section style-two">
         <div className="auto-container">
           <div className="row">
@@ -146,16 +124,6 @@ const index = () => {
         </div>
       </section>
       {/* <!-- End News Section --> */}
-
-      <section className="clients-section alternate">
-        <div className="sponsors-outer" data-aos="fade">
-          {/* <!--Sponsors Carousel--> */}
-          <ul className="sponsors-carousel">
-            <Partner />
-          </ul>
-        </div>
-      </section>
-      {/* <!-- End Clients Section--> */}
 
       <Footer />
       {/* <!-- End Main Footer --> */}

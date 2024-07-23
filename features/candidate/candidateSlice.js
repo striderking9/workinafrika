@@ -4,23 +4,23 @@ const initialState = {
     category: [
         {
             id: 1,
-            name: "Residential",
-            value: "residential",
+            name: "Stage",
+            value: "stage",
         },
         {
             id: 2,
-            name: "Commercial",
-            value: "commercial",
+            name: "Emploi",
+            value: "emploi",
         },
         {
             id: 3,
-            name: "Industrial",
-            value: "industrial",
+            name: "Stage",
+            value: "stage",
         },
         {
             id: 4,
-            name: "Apartments",
-            value: "apartments",
+            name: "Emploi",
+            value: "emploi",
         },
     ],
     datePost: [

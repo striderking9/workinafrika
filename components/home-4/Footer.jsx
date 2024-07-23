@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CopyrightFooter from "../footer/common-footer/CopyrightFooter";
 import FooterApps from "../footer/FooterApps";
+import FooterApps2 from "../footer/FooterApps2";
 import FooterContent3 from "../footer/FooterContent3";
 import SearchForm2 from "../footer/SearchForm2";
 
@@ -29,24 +30,13 @@ const Footer = () => {
                   <a href="#">
                     <Image
                     // Default 154, 50
-                      width={100}
-                      height={100}
+                      width={180}
+                      height={180}
                       src="/images/white.png"
                       alt="brand"
                     />
                   </a>
                 </div>
-                <p className="phone-num">
-                  <span>Appelez-nous </span>
-                  <a href="thebeehost@support.com">123 456 7890</a>
-                </p>
-                <p className="address">
-                  Azerty, 100, ACI 2000, Bamako,
-                  <br /> 3051, Mali. <br />
-                  <a href="mailto:support@support.com" className="email">
-                    support@support.com
-                  </a>
-                </p>
               </div>
             </div>
             {/* End footer address left widget */}
@@ -57,14 +47,23 @@ const Footer = () => {
 
                 <div className="footer-column col-lg-3 col-md-6 col-sm-12">
                   <div className="footer-widget">
-                    <h4 className="widget-title">Mobile Apps</h4>
+                    <h4 className="widget-title"></h4>
                     <FooterApps />
+                  </div>
+                </div>
+
+                <div className="footer-column col-lg-3 col-md-6 col-sm-12">
+                  <div className="footer-widget">
+                    <h4 className="widget-title"></h4>
+                    <FooterApps2 />
                   </div>
                 </div>
               </div>
               {/* End .row */}
             </div>
             {/* End col-xl-8 */}
+
+            
           </div>
         </div>
       </div>

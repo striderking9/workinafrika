@@ -36,7 +36,7 @@ const FormContent2 = () => {
     //167.86.125.178
 
     try {
-      const response = await fetch('http://192.168.1.179:8083/afrik-connect/api/v1/users/saveCandidat',
+      const response = await fetch('http://167.86.125.178:8083/afrik-connect/api/v1/users/saveCandidat',
           {
         method: 'POST',
         headers: {

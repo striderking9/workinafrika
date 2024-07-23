@@ -35,17 +35,6 @@ const JobFilterTab = () => {
   return (
     <>
       {/* <!--Tabs Box--> */}
-      <ul className="tab-buttons">
-        {tabs?.map((tab) => (
-          <li
-            onClick={() => tabHandler(tab.id)}
-            key={tab.id}
-            className={`${tab.isActive ? "active-btn" : ""} tab-btn`}
-          >
-            {tab.name}
-          </li>
-        ))}
-      </ul>
 
       {/* <!--Tab--> */}
       <div className="tab active-tab" data-aos="fade-up">

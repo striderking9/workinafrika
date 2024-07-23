@@ -12,8 +12,8 @@ const EnumTailleEntreprise = {
 };
 
 const FormContent3 = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [logoEntreprise, setLogoEntreprise] = useState('');
   const [nomEntreprise, setNomEntreprise] = useState('');
   const [siteWebEntreprise, setSiteWebEntreprise] = useState('');
@@ -32,8 +32,8 @@ const FormContent3 = () => {
     event.preventDefault();
 
     const data = {
-        email,
-        password,
+      email,
+      password,
       logoEntreprise,
       nomEntreprise,
       siteWebEntreprise,
@@ -50,7 +50,7 @@ const FormContent3 = () => {
     //167.86.125.178
 
     try {
-      const response = await fetch('http://192.168.1.179:8083/afrik-connect/api/v1/users/saveEntreprise',
+      const response = await fetch('http://167.86.125.178:8083/afrik-connect/api/v1/users/saveEntreprise',
           {
         method: 'POST',
         headers: {

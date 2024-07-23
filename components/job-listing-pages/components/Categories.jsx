@@ -27,11 +27,9 @@ const Categories = () => {
                 value={jobList.category}
                 onChange={categoryHandler}
             >
-                <option value="">Choose a category</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="industrial">Industrial</option>
-                <option value="apartments">Apartments</option>
+                <option value="">Type d'offre</option>
+                <option value="stage">Offre d'emploi</option>
+                <option value="emploi">Offre de stage</option>
             </select>
             <span className="icon flaticon-briefcase"></span>
         </>
