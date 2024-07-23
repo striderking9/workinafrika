@@ -15,7 +15,7 @@ const About4 = () => {
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId="y9j-BL5ocW8"
+        videoId="9_Vl5kXlc88"
         onClose={() => setOpen(false)}
       />
       {/* End popup modal video */}
@@ -52,7 +52,7 @@ const About4 = () => {
           <Image
             width={608}
             height={600}
-            src="/images/resource/image-5.png"
+            src="/images/resource/workinafrica.jpg"
             alt="popup icon"
           />
           <div

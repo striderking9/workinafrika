@@ -19,7 +19,7 @@ const FormContent = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8083/afrik-connect/api/v1/auth/authenticate', {
+      const response = await fetch('http://192.168.1.179:8083/afrik-connect/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

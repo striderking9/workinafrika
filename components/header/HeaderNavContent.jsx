@@ -42,8 +42,10 @@ const HeaderNavContent = () => {
                     >
                         <Link href="/job-list-v4">Emploi</Link>
                     </li>
+                    
                     {/* End findjobs menu items */}
-
+                    
+                    {/*
                     <li
                         className={`${
                             isActiveParent(employerItems, usePathname()) ||
@@ -56,6 +58,7 @@ const HeaderNavContent = () => {
                     </li>
                     {/* End find enterprises menu items */}
 
+                    {/*
                     <li
                         className={`${
                             isActiveParent(employerItems, usePathname()) ||
@@ -68,7 +71,7 @@ const HeaderNavContent = () => {
                     </li>
                     {/* End find candidate menu items */}
 
-
+                    {/*
                     <li
                         className={`${
                             isActiveParentChaild(contactItems, usePathname())

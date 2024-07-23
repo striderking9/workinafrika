@@ -6,8 +6,8 @@ const RegBanner2 = () => {
     {
       id: 1,
       name: "Employers",
-      text: ` Sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt. Labore et dolore nostrud exercitation.`,
+      text: ` Découvrez nos conseils pour fidéliser aux mieux vos talents.
+      Accédez à + de 30.000 CV Qualifié`,
       avatar: "/images/resource/employ.png",
       bannerClass: "banner-style-one",
       width: "221",
@@ -15,9 +15,8 @@ const RegBanner2 = () => {
     },
     {
       id: 2,
-      name: "Candidate",
-      text: ` Sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt. Labore et dolore nostrud exercitation.`,
+      name: "Candidat",
+      text: ` Vous souhaitez, changez, découvrir ou vous intéressé à un métier ? `,
       avatar: "/images/resource/candidate.png",
       bannerClass: "banner-style-two",
       width: "207",
@@ -36,7 +35,7 @@ const RegBanner2 = () => {
               <h3>{item.name}</h3>
               <p>{item.text}</p>
               <Link href="/register" className="theme-btn btn-style-five">
-                Register Account
+                Créer un compte
               </Link>
             </div>
             <figure className="image">

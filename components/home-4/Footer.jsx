@@ -30,8 +30,8 @@ const Footer = () => {
                     <Image
                     // Default 154, 50
                       width={100}
-                      height={50}
-                      src="/images/logo-2.svg"
+                      height={100}
+                      src="/images/white.png"
                       alt="brand"
                     />
                   </a>

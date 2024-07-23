@@ -13,6 +13,7 @@ const EnumTailleEntreprise = {
 
 const FormContent3 = () => {
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
   const [logoEntreprise, setLogoEntreprise] = useState('');
   const [nomEntreprise, setNomEntreprise] = useState('');
   const [siteWebEntreprise, setSiteWebEntreprise] = useState('');
@@ -32,6 +33,7 @@ const FormContent3 = () => {
 
     const data = {
         email,
+        password,
       logoEntreprise,
       nomEntreprise,
       siteWebEntreprise,
@@ -48,7 +50,7 @@ const FormContent3 = () => {
     //167.86.125.178
 
     try {
-      const response = await fetch('http://167.86.125.178:8083/afrik-connect/api/v1/users/saveEntreprise',
+      const response = await fetch('http://192.168.1.179:8083/afrik-connect/api/v1/users/saveEntreprise',
           {
         method: 'POST',
         headers: {
@@ -88,6 +90,18 @@ const FormContent3 = () => {
           </div>
           {/* email */}
 
+          <div className="form-group">
+              <label>Mot de passe</label>
+              <input
+                  type="password"
+                  name="password"
+                  placeholder="Mot de Passe"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+              />
+          </div>
+          {/* email */}
 
         <div className="form-group">
           <label>Logo de l'entreprise</label>
@@ -95,7 +109,6 @@ const FormContent3 = () => {
               type="text"
               name="logoEntreprise"
               placeholder="Logo de l'entreprise"
-              required
               value={logoEntreprise}
               onChange={(e) => setLogoEntreprise(e.target.value)}
           />
@@ -145,8 +158,6 @@ const FormContent3 = () => {
           </div>
           {/* tailleEntreprise */}
 
-
-
         <div className="form-group">
           <label>À propos</label>
           <textarea
@@ -165,7 +176,6 @@ const FormContent3 = () => {
               type="text"
               name="latitudeEntreprise"
               placeholder="Latitude de l'entreprise"
-              required
               value={latitudeEntreprise}
               onChange={(e) => setLatitudeEntreprise(e.target.value)}
           />
@@ -178,7 +188,6 @@ const FormContent3 = () => {
               type="text"
               name="longitudeEntreprise"
               placeholder="Longitude de l'entreprise"
-              required
               value={longitudeEntreprise}
               onChange={(e) => setLongitudeEntreprise(e.target.value)}
           />
@@ -191,7 +200,7 @@ const FormContent3 = () => {
               type="text"
               name="lienFacebook"
               placeholder="Lien Facebook"
-              required
+              
               value={lienFacebook}
               onChange={(e) => setLienFacebook(e.target.value)}
           />
@@ -204,7 +213,7 @@ const FormContent3 = () => {
               type="text"
               name="lienTwitter"
               placeholder="Lien Twitter"
-              required
+              
               value={lienTwitter}
               onChange={(e) => setLienTwitter(e.target.value)}
           />
@@ -217,7 +226,7 @@ const FormContent3 = () => {
               type="text"
               name="lienLinkedIn"
               placeholder="Lien LinkedIn"
-              required
+              
               value={lienLinkedIn}
               onChange={(e) => setLienLinkedIn(e.target.value)}
           />

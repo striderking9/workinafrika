@@ -9,6 +9,9 @@ import Blog6 from "../blog/Blog6";
 import Partner from "../common/partner/Partner";
 import LoginPopup from "../common/form/login/LoginPopup";
 import MobileMenu from "../header/MobileMenu";
+import RegBanner2 from "../block/RegBanner2";
+import About4 from "../about/About4";
+import Funfact from "../fun-fact-counter/Funfact";
 
 const index = () => {
   return (
@@ -24,6 +27,22 @@ const index = () => {
 
       <Hero4 />
       {/* <!-- End Banner Section--> */}
+
+      <section className="registeration-banners">
+        <div className="auto-container">
+          <div className="sec-title text-center">
+            <h2>Emplois les plus populaires</h2>
+            <div className="text">
+              Connaissez votre valeur et trouvez l'emploi qui correspond à votre vie
+            </div>
+          </div>
+          {/* End sec-title */}
+          <div className="row" data-aos="fade-up">
+            <RegBanner2 />
+          </div>
+        </div>
+      </section>
+      {/* <!-- End Registeration Banners --> */}
 
       <section className="job-section alternate">
         <div className="auto-container">
@@ -94,6 +113,23 @@ const index = () => {
         </div>
       </section>
       {/* End Job Categorie Section */}
+
+      <section className="about-section style-two">
+        <div className="auto-container">
+          <div className="row">
+            <About4 />
+          </div>
+
+          {/* <!-- Fun Fact Section --> */}
+          <div className="fun-fact-section">
+            <div className="row">
+              <Funfact />
+            </div>
+          </div>
+          {/* <!-- Fun Fact Section --> */}
+        </div>
+      </section>
+      {/* <!-- End About Section --> */}
 
       <section className="news-section style-two">
         <div className="auto-container">

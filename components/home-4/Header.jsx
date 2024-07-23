@@ -52,9 +52,9 @@ const Header = () => {
                                 <Link href="/">
                                     <Image
                                         // Default 154, 50
-                                        width={50}
-                                        height={50}
-                                        src="/images/logo-2.svg"
+                                        width={100}
+                                        height={100}
+                                        src="/images/white.png"
                                         alt="brand"
                                     />
                                 </Link>
