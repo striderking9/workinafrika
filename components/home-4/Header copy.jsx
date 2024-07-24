@@ -1,11 +1,24 @@
 'use client'
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import HeaderNavContent from "../header/HeaderNavContent";
 import Image from "next/image";
 
 const Header = () => {
+    const [isDataAvailable, setIsDataAvailable] = useState(false);
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        // Check if running in the browser
+        if (typeof window !== 'undefined') {
+            const data = JSON.parse(localStorage.getItem('data'));
+            setIsDataAvailable(data !== null);
+            setUserName(data.prenom + ' '+ data.nom);
+        }
+        console.log(isDataAvailable)
+    }, []);
+
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
@@ -18,11 +31,9 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", changeBackground);
-        // Cleanup event listener on component unmount
-        return () => {
-            window.removeEventListener("scroll", changeBackground);
-        };
     }, []);
+
+
 
     return (
         // <!-- Main Header-->
@@ -40,6 +51,7 @@ const Header = () => {
                             <div className="logo">
                                 <Link href="/">
                                     <Image
+                                        // Default 154, 50
                                         width={100}
                                         height={100}
                                         src="/images/white.png"
@@ -55,13 +67,31 @@ const Header = () => {
                     </div>
                     {/* End .nav-outer */}
 
-                    <div className="outer-box">
-                        <div className="d-flex align-items-center btn-box2">
-                            <a className="theme-btn btn-style-six call-modal">
-                                Bonjour
-                            </a>
+                    {!isDataAvailable && (
+                        <div className="outer-box">
+                            <div className="d-flex align-items-center btn-box2">
+                                <a
+                                    href="#"
+                                    className="theme-btn btn-style-six call-modal"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#loginPopupModal"
+                                >
+                                    S'identifier
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    )}
+                    {isDataAvailable && (
+                        <div className="outer-box">
+                            <div className="d-flex align-items-center btn-box2">
+                                <a
+                                    className="theme-btn btn-style-six call-modal"
+                                >
+                                    Bienvenue {userName}
+                                </a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>
