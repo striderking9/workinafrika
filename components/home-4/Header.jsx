@@ -58,7 +58,7 @@ const Header = () => {
                     <div className="outer-box">
                         <div className="d-flex align-items-center btn-box2">
                             <a className="theme-btn btn-style-six call-modal">
-                                Bonjour
+                                Mon espace
                             </a>
                         </div>
                     </div>

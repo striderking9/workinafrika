@@ -13,6 +13,8 @@ import RegBanner2 from "../block/RegBanner2";
 import About4 from "../about/About4";
 import Funfact from "../fun-fact-counter/Funfact";
 
+// import Map from "../mapchart";
+
 const index = () => {
   return (
     <>
@@ -72,6 +74,12 @@ const index = () => {
         </div>
       </section>
       {/* <!-- End Process Section --> */}
+
+      <div>
+        <h1>Sélectionner la région de votre choix</h1>
+        <p>626 Évènement(s) dans toute l'Afrique</p>
+        
+      </div>
 
       <section className="top-companies style-two">
         <div className="auto-container">

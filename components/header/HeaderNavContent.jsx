@@ -22,15 +22,6 @@ const HeaderNavContent = () => {
             <nav className="nav main-menu">
                 <ul className="navigation" id="navbar">
                     {/* current dropdown */}
-                    <li
-                        className={`${
-                            isActiveParent(homeItems, usePathname())
-                                ? "current"
-                                : ""
-                        }`}
-                    >
-                        <Link href="/">Accueil</Link>
-                    </li>
                     {/* End homepage menu items */}
 
                     <li

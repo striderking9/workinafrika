@@ -3,7 +3,7 @@ import Home from "@/components/home-4";
 
 export const metadata = {
   title: "workinafrica",
-  description: "Lorem Ipsum...",
+  description: "workinafrica",
 };
 
 export default function page() {

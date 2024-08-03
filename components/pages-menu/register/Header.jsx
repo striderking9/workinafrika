@@ -35,7 +35,7 @@ const Header = () => {
                   <Image
                     width={154}
                     height={50}
-                    src="/images/logo-2.svg"
+                    src="/images/white.png"
                     alt="logo"
                     title="brand"
                   />
@@ -44,7 +44,7 @@ const Header = () => {
                   <Image
                     width={154}
                     height={50}
-                    src="/images/logo.svg"
+                    src="/images/white.png"
                     alt="logo"
                     title="brand"
                   />

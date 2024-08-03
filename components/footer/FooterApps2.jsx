@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "../job-single-pages/shared-components/Contact"
 
 const FooterApps2 = () => {
   return (
@@ -10,7 +11,10 @@ const FooterApps2 = () => {
             <i className="fa fa-phone"></i>
           </div>
           <div className="inner">
-            <div className="name-app">Contactez-nous</div>
+            <a href="/contact">
+              <div className="name-app">Contactez-nous</div>
+            </a>
+            
           </div>
         </a>
       </div>

@@ -1,9 +1,11 @@
-import FooterDefault from "../../footer/common-footer";
+import FooterDefault from "../../../components/footer/common-footer";
 import LoginPopup from "../../common/form/login/LoginPopup";
 import DefaulHeader from "../../header/DefaulHeader";
 import MobileMenu from "../../header/MobileMenu";
 import FilterJobBox from "./FilterJobBox";
 import JobSearchForm from "./JobSearchForm";
+import RegBanner from "../../block/RegBanner";
+
 
 const index = () => {
   return (
@@ -27,6 +29,20 @@ const index = () => {
         </div>
       </section>
       {/* <!--End Page Title--> */}
+
+      <section className="registeration-banners">
+        <div className="auto-container">
+          <div className="sec-title text-center">
+            <div className="text">
+            </div>
+          </div>
+          {/* End sec-title */}
+          <div className="row" data-aos="fade-up">
+            <RegBanner />
+          </div>
+        </div>
+      </section>
+      {/* <!-- End Registeration Banners --> */}
 
       <section className="ls-section style-three">
         <div className="auto-container">
